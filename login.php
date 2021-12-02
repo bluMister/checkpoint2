@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                     $_SESSION["userid"] = $result['id'];
                     $_SESSION["user"] = $result;
 
-                    // Redirect the user to welcome page
+                    // Redirect user
                     header("location: index.php");
             exit;
         } else {

@@ -28,10 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
     if($query = $db->prepare("SELECT * FROM users WHERE email = ?")) {
         $error = '';
-        // Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
-	$query->bind_param('s', $email);
+       
 	$query->execute();
-	// Store the result so we can check if the account exists in the database.
+
 	$query->store_result();
         if ($query->num_rows > 0) {
             $error .= '<p class="error">The email address is already registered!</p>';
